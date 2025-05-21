@@ -51,7 +51,7 @@ export default function Header() {
                     alt=""
                   ></Image>
                   <span className="whitespace-nowrap font-bold text-xl text-primary">
-                    سانگ بار
+                    سانگ باز
                   </span>
                 </div>
               </div>

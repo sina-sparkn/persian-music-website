@@ -14,7 +14,7 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "سانگ بار - دانلود آهنگ جدید",
+  title: "سانگ باز - دانلود آهنگ جدید",
   description:
     "دانلود بهترین موزیک های جدید ایرانی با لینک مستقیم و کیفیت عالی",
 };
