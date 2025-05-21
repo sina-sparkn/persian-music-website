@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 336 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 44 100% 52%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 17 97% 51%;
+    --accent-foreground: 210 40% 98%;
+
+    --purple: 261 84% 57%;
+    --purple-foreground: 210 40% 98%;
+
+    --blue: 217 100% 62%;
+    --blue-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 336 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 336 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 44 100% 52%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 17 97% 51%;
+    --accent-foreground: 210 40% 98%;
+
+    --purple: 261 84% 57%;
+    --purple-foreground: 210 40% 98%;
+
+    --blue: 217 100% 62%;
+    --blue-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 336 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.font-sans {
+  font-family: var(--font-vazirmatn), sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Audio visualizer */
+.visualizer-bar {
+  transform-origin: bottom;
+  transition: transform 0.05s ease;
+}
+
+/* Playlist animations */
+.playlist-item {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.playlist-item:hover {
+  @apply bg-muted;
+  transform: translateX(-4px);
+}
+
+/* Album grid */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .album-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* Now playing bar */
+.now-playing-bar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Pagination styles */
+.pagination-button {
+  min-width: 40px;
+  height: 2.5rem;
+  @apply flex items-center justify-center rounded-md border border-border transition-colors;
+}
+
+.pagination-button.active {
+  @apply bg-primary text-white border-primary;
+}
+
+.pagination-button:not(.active) {
+  @apply bg-card hover:bg-muted;
+}
+
+/* Scroll margin for section targets */
+.scroll-mt-20 {
+  scroll-margin-top: 5rem;
+}
