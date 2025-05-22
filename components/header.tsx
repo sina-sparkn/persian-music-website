@@ -47,7 +47,7 @@ export default function Header() {
                   <Image
                     width={55}
                     height={55}
-                    src={"/Asset 2@4x.png"}
+                    src={"/Asset2@4x.png"}
                     alt=""
                   ></Image>
                 </div>
