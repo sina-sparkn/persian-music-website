@@ -45,8 +45,8 @@ export default function Header() {
               <div className="relative h-16 w-20 mr-2">
                 <div className="flex items-center justify-center gap-2 w-full h-full">
                   <Image
-                    width={70}
-                    height={70}
+                    width={55}
+                    height={55}
                     src={"/Asset 2@4x.png"}
                     alt=""
                   ></Image>

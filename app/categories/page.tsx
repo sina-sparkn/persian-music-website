@@ -1,7 +1,7 @@
-"use client"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { categories } from "@/lib/data"
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { categories } from "@/lib/data";
 
 export default function CategoriesPage() {
   return (
@@ -21,12 +21,14 @@ export default function CategoriesPage() {
               <div
                 className={`${category.color} rounded-xl p-6 h-32 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300`}
               >
-                <h2 className="text-2xl font-bold text-white">{category.name}</h2>
+                <h2 className="text-2xl font-bold dark:text-white text-black">
+                  {category.name}
+                </h2>
               </div>
             </Link>
           </motion.div>
         ))}
       </div>
     </div>
-  )
+  );
 }
